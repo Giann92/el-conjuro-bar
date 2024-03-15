@@ -1,16 +1,16 @@
-import { FC } from "react";
+import { FC, HTMLProps } from "react";
 
-interface TitleProps {
+interface TitleProps extends HTMLProps<HTMLHeadingElement> {
   title: string;
-//   titlePrimary: string;
 }
 
-const Title: FC<TitleProps> = ({ title,}) => {
+const Title: FC<TitleProps> = ({ title, className, ...rest }) => {
   return (
-    <h1 className="text-4xl flex items-center text-black font-semibold">
+    <h1 className={`text-4xl flex items-center text-black font-semibold ${className}`} {...rest}>
       <span>{title}</span>
-      {/* <span>{titlePrimary}</span> */}
     </h1>
   );
 };
+
 export default Title;
+

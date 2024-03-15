@@ -1,14 +1,22 @@
-import Nosotros from '@/components/nosotros'
-import Image from 'next/image'
+import Carta from '@/components/carta';
+import Eventos from '@/components/eventos';
+import Nosotros from '@/components/nosotros';
+import Head from 'next/head';
+
+export const metadata = {
+  title: 'El conjuro resto-bar',
+  description: 'El conjuro bar',
+}
 
 export default function Home() {
   return (
     <div>
-    <main>
-      <h1 className="text-4xl font-bold text-center mt-8">El Conjuro bar </h1>
-      <p className="text-lg text-center mt-4">¡Disfruta de nuestras deliciosas comidas y bebidas!</p>
-    </main>
-    <Nosotros/>
-  </div>
-  )
+    
+      <main>
+        <Nosotros />
+        <Eventos />
+        <Carta />
+      </main>
+    </div>
+  );
 }

@@ -1,10 +1,10 @@
 'use client'
 import React, { useState, useEffect } from "react";
 import Container from "./container";
-import Logo from "./logo";
 import Menubar from "../nav/menu";
 import { TiThMenu } from "react-icons/ti";
 import MenuMobile from "../nav/menu-mobile";
+import Logo from "./logo";
 
 const Header: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -31,17 +31,17 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="bg-gray-800 p-4 flex justify-between items-center">
+      <header className="bg-black p-4 flex justify-between items-center border border-black rounded-lg shadow-lg fixed top-0 left-0 right-0 z-10">
         <Container className="flex items-center justify-between">
           <section>
-            <Logo />
+            <Logo/>
           </section>
           <section className="hidden lg:block">
-            <Menubar />
+            <Menubar onClose={handleCloseMenu} />
           </section>
           <section className="lg:hidden">
             <button type="button" onClick={handleMenuToggle}>
-              <TiThMenu size={24} />
+              <TiThMenu color='white'size={24} />
             </button>
           </section>
         </Container>
@@ -52,3 +52,5 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
+

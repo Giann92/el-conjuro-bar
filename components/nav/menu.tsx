@@ -1,29 +1,42 @@
-import Link from 'next/link';
-import { FaWhatsapp } from 'react-icons/fa';
+import { FC } from "react";
+import Link from "next/link";
 
-const Menubar: React.FC = () => {
+interface MenubarProps {
+  onClose: () => void;
+}
+
+const Menubar: FC<MenubarProps> = ({ onClose }) => {
+  const handleLinkClick = () => {
+    onClose(); // Llama a la función onClose cuando se hace clic en un enlace
+  };
+
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav>
       <ul className="flex flex-col lg:flex-row justify-between items-center">
         <li>
-          <Link href="#" className="text-white font-bold text-xl mr-4 hover:text-lg hover:underline">Inicio</Link>
+          <Link href="#" className="text-white font-bold text-xl mr-4 hover:text-lg hover:underline" onClick={handleLinkClick}>
+            Inicio
+          </Link>
         </li>
         <li>
-          <Link href="#nosotros" className="text-white hover:text-lg hover:underline mr-4">Nosotros</Link>
+          <Link href="#nosotros" className="text-white  hover:text-lg hover:underline mr-4" onClick={handleLinkClick}>
+            Nosotros
+          </Link>
         </li>
         <li>
-          <Link href="/menu" className="text-white hover:text-lg hover:underline mr-4">Menú</Link>
+          <Link href="#menu" className="text-white  hover:text-lg hover:underline mr-4" onClick={handleLinkClick}>
+            Menú
+          </Link>
         </li>
         <li>
-          <Link href="/eventos" className="text-white hover:text-lg hover:underline mr-4">Eventos</Link>
+          <Link href="#fotos" className="text-white  hover:text-lg hover:underline mr-4" onClick={handleLinkClick}>
+            Fotos
+          </Link>
         </li>
         <li>
-          <Link href="/contactanos" className="text-white hover:text-lg hover:underline mr-4">Contáctanos</Link>
-        </li>
-        <li>
-          <a href="https://wa.me/telefono" target="_blank" rel="noopener noreferrer" className="text-white hover:text-lg hover:underline">
-            <FaWhatsapp />
-          </a>
+          <Link href="#contactanos" className="text-white  hover:text-lg hover:underline mr-4" onClick={handleLinkClick}>
+            Contáctanos
+          </Link>
         </li>
       </ul>
     </nav>
@@ -31,6 +44,7 @@ const Menubar: React.FC = () => {
 };
 
 export default Menubar;
+
 
 
 
