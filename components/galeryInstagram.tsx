@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 interface InstagramMedia {
@@ -13,21 +13,13 @@ interface InstagramMedia {
 }
 
 function GaleryInstagram() {
+    const [mediaData, setMediaData] = useState<InstagramMedia[]>([]);
+
     useEffect(() => {
         async function obtenerMediosDeInstagram() {
             try {
-                const response = await axios.get<InstagramMedia[]>(`${window.location.origin}/api/instagram`);
-                const mediaData: InstagramMedia[] = response.data;
-                console.log(mediaData);
-                mediaData.forEach((media: InstagramMedia) => {
-                    console.log('ID:', media.id);
-                    console.log('Tipo de medio:', media.media_type);
-                    console.log('URL del medio:', media.media_url);
-                    console.log('Descripción:', media.caption);
-                    console.log('Enlace permanente:', media.permalink);
-                    console.log('URL de la miniatura:', media.thumbnail_url);
-                    console.log('---');
-                });
+                const response = await axios.get<InstagramMedia[]>(`../../api/instagram`);
+                setMediaData(response.data);
             } catch (error) {
                 console.error('Error al obtener medios de Instagram:', error);
             }
@@ -37,8 +29,17 @@ function GaleryInstagram() {
     }, []);
 
     return (
-        // Renderiza tu componente aquí
-        <div>Tu componente de React</div>
+        <div>
+            {mediaData.map((media) => (
+                <div key={media.id}>
+                    <img src={media.media_url} alt={media.caption} />
+                    <p>ID: {media.id}</p>
+                    <p>Tipo de medio: {media.media_type}</p>
+                    <p>Descripción: {media.caption}</p>
+                    <p>Enlace permanente: {media.permalink}</p>
+                </div>
+            ))}
+        </div>
     );
 }
 

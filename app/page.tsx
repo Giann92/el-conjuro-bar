@@ -3,6 +3,7 @@ import Eventos from '@/components/eventos';
 import GaleryInstagram from '@/components/galeryInstagram';
 import Nosotros from '@/components/nosotros';
 import Head from 'next/head';
+import Instagram from './blog/instagram';
 
 export const metadata = {
   title: 'El conjuro resto-bar',
@@ -16,8 +17,8 @@ export default function Home() {
       <main>
         <Nosotros />
         <Eventos />
-        <Carta />
-        <GaleryInstagram/>
+   
+      <Instagram/>
       </main>
     </div>
   );
