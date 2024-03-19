@@ -1,5 +1,6 @@
 import Carta from '@/components/carta';
 import Eventos from '@/components/eventos';
+import GaleryInstagram from '@/components/galeryInstagram';
 import Nosotros from '@/components/nosotros';
 import Head from 'next/head';
 
@@ -16,6 +17,7 @@ export default function Home() {
         <Nosotros />
         <Eventos />
         <Carta />
+        <GaleryInstagram/>
       </main>
     </div>
   );

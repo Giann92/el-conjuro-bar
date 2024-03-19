@@ -25,3 +25,6 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+.font-lilita {
+  font-family: 'Lilita', serif;
+}
