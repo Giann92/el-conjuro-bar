@@ -73,7 +73,6 @@ export default function Instagram() {
                         </div>
                         <div className="absolute bottom-0 left-0 w-full bg-white p-2">
                             <p className="text-xs font-bold">{media.username}</p>
-                            <p className="text-xs">{media.caption}</p>
                         </div>
                     </div>
                 ))}
