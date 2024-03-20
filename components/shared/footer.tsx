@@ -4,43 +4,45 @@ import Contacto from '../contacto';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-gray-800 text-white text-center py-4">
+    <footer className="bg-black text-white text-center py-4">
       <Container>
-        <div className="flex justify-between mb-4">
+        <div className="flex flex-col md:flex-row justify-between md:items-center md:mb-4">
           {/* Contenido de Contacto */}
-          <div>
-            <h2>CONTACTO:</h2>
+          <div className="mb-4 md:mb-0">
+            <h2 className="mb-2">CONTACTO:</h2>
             <div>
               <Contacto />
             </div>
           </div>
           {/* Contenido de Horario */}
-          <div>
-            <h2>HORARIO:</h2>
+          <div className="mb-4 md:mb-0">
+            <h2 className="mb-2">HORARIO:</h2>
             <p>Lunes a sábado de 9:00 am a 4:00 am </p>
-            <p>Domingos de  18:00 pm a 4:00 am </p>
+            <p>Domingos de 18:00 pm a 4:00 am </p>
           </div>
-             {/* Contenido de Medio de pago */}
-          <div className="flex flex-col items-center">
-            <h2 className="mb-2">MEDIO DE PAGO:</h2>
-            <div className="mb-2">
-              <img src="/img/mpvm.png" alt="Mercado Pago" className="w-32 h-auto mr-4" />
+        </div>
+        {/* Contenido de Medio de pago */}
+        <div className="flex justify-center">
+          <h2 className="mb-2">MEDIO DE PAGO: </h2>
+          <div className="flex justify-center">
+            <div className="mb-2 mr-4">
+              <img src="/img/mpvm.png" alt="Mercado Pago" className="w-48 md:w-30 h-auto" />
+            </div>
+            <div className="mb-2 mr-4">
+              <img src="/img/transferencia_bancaria.png" alt="Transferencia bancaria" className="w-20 md:w-24 h-auto" />
             </div>
             <div className="mb-2">
-              <img src="/img/transferencia_bancaria.png" alt="Transferencia bancaria" className="w-24 h-auto mr-4" />
-            </div>
-            <div>
-              <img src="/img/efectivo.png" alt="Efectivo" className="w-24 h-auto mr-4" />
+              <img src="/img/efectivo.png" alt="Efectivo" className="w-20 md:w-24 h-auto" />
             </div>
           </div>
         </div>
         {/* Texto de derechos de autor */}
-        <p className="mb-4">Derechos de autor © 2024 El Conjuro Bar. Todos los derechos reservados.</p>
+        <p>Derechos de autor © 2024 El Conjuro Bar. Todos los derechos reservados.</p>
       </Container>
     </footer>
-
   );
 };
 
 export default Footer;
+
 

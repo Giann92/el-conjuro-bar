@@ -36,15 +36,18 @@ const MenuMobile: FC<MenuMobileProps> = ({ isOpen, onClose }) => {
           !isOpen ? "top-0 -translate-y-full" : "top-[80px]"
         )}
       >
-    
         {/* Agrega el menú aquí */}
-        <Menubar onClose={handleCloseMenu} />
+        <div style={{ padding: "20px 0", fontSize: "1.2rem" }}>
+          <Menubar onClose={handleCloseMenu} />
+        </div>
       </div>
     </>
   );
 };
 
 export default MenuMobile;
+
+
 
 
 

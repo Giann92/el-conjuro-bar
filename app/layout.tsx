@@ -31,9 +31,6 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="/icon/beer.ico" />
-      </Head>
       <body className={inter.className}>
         {/* Renderiza el componente de carga solo cuando se está cargando la página */}
         {loading ? (

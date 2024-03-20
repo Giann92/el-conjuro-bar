@@ -4,7 +4,7 @@ import React from 'react';
 const Hero: React.FC = () => {
   return (
     <div className="hero">
-      <img src='/img/Monica_Monica_2024-03-03_21_00_35.webp' className="hero-image" />
+      <img src='/img/fondo2-elconjuro.jpg' className="hero-image" />
       <div className="hero-content" style={{ boxShadow: '0 0 0 4px #7FDDCF, 0 0 0 8px #7FDDCF' }}>
         <h1 className="hero-title text-5xl font-bold">Bienvenidos <br /> a</h1>
         <h1 className="hero-title font-lilita text-7xl font-bold">El Conjuro Bar</h1>

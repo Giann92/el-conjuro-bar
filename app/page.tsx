@@ -13,13 +13,20 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
-    
+      <Head>
+        <style>{`
+          html {
+            scroll-behavior: smooth;
+          }
+        `}</style>
+      </Head>
       <main>
         <Nosotros />
         <Eventos />
         <Carta/>
-      <Instagram/>
+        <Instagram/>
       </main>
     </div>
   );
 }
+
