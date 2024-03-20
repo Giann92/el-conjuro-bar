@@ -9,10 +9,9 @@ interface InstagramMedia {
     id: string;
     media_url: string;
     media_type: string;
-    username: string; // Nombre de usuario
-    caption: string; // Leyenda de la foto
-    thumbnail_url?: string; // Thumbnail URL
-    // Agrega otras propiedades si las necesitas
+    username: string;
+    caption: string;
+    thumbnail_url?: string;
 }
 
 export default function Instagram() {
@@ -20,7 +19,7 @@ export default function Instagram() {
 
     useEffect(() => {
         const fetchMediaData = async () => {
-            const accessToken = 'IGQWRNd3dFempnSUVzNWtIU2s4T3Nnbnhfa2NoNEtrb3J0Qk01a3lJYURocUdmSjMxNGpYSTVHM1ZAwZAHU0U2pZAWEVHcXc3bFVmR3AtQTJHUnZAuYzRTakctanh0VXl6cjFPNTZAmbVNRY2ZACZAy1GREFYcXN1MWhMQTgZD'
+            const accessToken = 'your_access_token';
             const apiUrl = `https://graph.instagram.com/me/media?fields=id,media_url,media_type,username,caption,thumbnail_url&access_token=${accessToken}`;
 
             try {
@@ -38,7 +37,7 @@ export default function Instagram() {
                     media_type: item.media_type,
                     username: item.username,
                     caption: item.caption,
-                    thumbnail_url: item.thumbnail_url, // Agregar thumbnail_url si está presente
+                    thumbnail_url: item.thumbnail_url,
                 }));
 
                 console.log("Datos de las imágenes y reels:", media);
@@ -55,12 +54,11 @@ export default function Instagram() {
         return <div>No hay miniaturas disponibles.</div>;
     }
 
-    // Limitar la cantidad de elementos a mostrar (los primeros 10)
     const limitedMediaData = mediaData.slice(0, 10);
 
     return (
         <Container>
-            <Title title="Instagram" className="text-white mb-4" /> {/* Agregamos un margen inferior de 4 */}
+            <Title title="Instagram" className="text-white mb-4" />
             <div className="flex flex-wrap justify-center gap-4">
                 {limitedMediaData.map((media: InstagramMedia, index: number) => (
                     <div key={media.id} className="relative">
@@ -83,4 +81,5 @@ export default function Instagram() {
         </Container>
     );
 }
+
 
