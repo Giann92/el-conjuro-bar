@@ -7,7 +7,7 @@ const Carta = ()=>{
        <section id="menu">
         <Container>
         <Title title="Menú" className=" text-white"/>
-
+        <img src="img/menu-bebidas-comida-restaurante.avif" alt="carta"/>
         </Container>
        </section>
     );
