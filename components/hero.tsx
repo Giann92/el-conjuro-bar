@@ -14,7 +14,7 @@ const Hero: React.FC = () => {
       <style jsx>{`
           .hero {
             width: 100%;
-            height: 100vh;
+            height: 100vh; /* Cambiado a 100vh para ocupar toda la pantalla */
             position: relative;
             overflow: hidden;
           }
@@ -23,7 +23,7 @@ const Hero: React.FC = () => {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: fixed; /* Cambiado de absolute a fixed */
+            position: fixed;
             top: 0;
             left: 0;
             z-index: -1;
