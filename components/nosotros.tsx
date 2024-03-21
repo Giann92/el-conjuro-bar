@@ -5,7 +5,7 @@ const Nosotros = () => {
     return (
         <section id="nosotros" className="min-h-screen flex items-center justify-center bg-gray-800 bg-opacity-50 text-white">
             <Container>
-                <Title title="Nosotros" className=" text-white" />
+                <Title title="Nosotros" className=" text-white mb-4" />
                 <p className="text-lg leading-relaxed font-medium">
 
                     ¡Bienvenidos a nuestro Resto Bar, donde los sabores se mezclan con la diversión y los recuerdos se crean para durar toda la vida! Aquí,

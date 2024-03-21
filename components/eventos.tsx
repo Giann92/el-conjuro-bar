@@ -14,9 +14,9 @@ const Eventos: React.FC = () => {
 
 
   return (
-    <section id="fotos" className="min-h-screen flex items-center justify-center bg-gray-800 bg-opacity-50 text-white">
+    <section id="fotos" className="min-h-screen flex items-center justify-center  text-white">
       <Container>
-      <Title title="Fotos" className="text-white" />
+      <Title title="Fotos" className="text-white mb-4" />
 
         <ImageGallery/>
       </Container>

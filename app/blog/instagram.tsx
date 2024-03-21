@@ -1,9 +1,11 @@
 'use client'
+
 import Container from "@/components/shared/container";
 import Title from "@/components/ui/title";
 import axios from "axios";
 import { useEffect, useState } from "react";
-require('dotenv').config();
+
+
 
 interface InstagramMedia {
     id: string;
