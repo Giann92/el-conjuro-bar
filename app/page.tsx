@@ -23,6 +23,10 @@ export default function Home() {
           @media screen and (max-width: 768px) {
             /* Estilos específicos para dispositivos móviles */
           }
+          /* Media Queries para orientación apaisada */
+          @media screen and (max-width: 1024px) and (orientation: landscape) {
+            /* Estilos específicos para dispositivos móviles en orientación apaisada */
+          }
         `}</style>
       </Head>
       <main>
