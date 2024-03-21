@@ -14,9 +14,14 @@ export default function Home() {
   return (
     <div>
       <Head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <style>{`
           html {
             scroll-behavior: smooth;
+          }
+          /* Media Queries para dispositivos móviles */
+          @media screen and (max-width: 768px) {
+            /* Estilos específicos para dispositivos móviles */
           }
         `}</style>
       </Head>
@@ -29,4 +34,5 @@ export default function Home() {
     </div>
   );
 }
+
 
