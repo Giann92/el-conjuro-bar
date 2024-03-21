@@ -13,30 +13,13 @@ export const metadata = {
 export default function Home() {
   return (
     <div>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <style>{`
-          html {
-            scroll-behavior: smooth;
-          }
-          /* Media Queries para dispositivos móviles */
-          @media screen and (max-width: 768px) {
-            /* Estilos específicos para dispositivos móviles */
-          }
-          /* Media Queries para orientación apaisada */
-          @media screen and (max-width: 1024px) and (orientation: landscape) {
-            /* Estilos específicos para dispositivos móviles en orientación apaisada */
-          }
-        `}</style>
-      </Head>
+    
       <main>
         <Nosotros />
         <Eventos />
-        <Carta/>
-        <Instagram/>
+   
+      <Instagram/>
       </main>
     </div>
   );
 }
-
-
