@@ -66,12 +66,12 @@ export default function Instagram() {
             <Title title="Instagram" className="text-white mb-4" />
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 {mediaData.map((media: InstagramMedia, index: number) => (
-                    <div key={media.id} className="relative w-30 h-30 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 overflow-hidden bg-white border border-gray-200 cursor-pointer" onClick={() => handleClick(media)}>
+                    <div key={media.id} className="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4 cursor-pointer" onClick={() => handleClick(media)}>
                         {media.media_type === 'IMAGE' ? (
                             <img
                                 src={media.thumbnail_url || media.media_url}
                                 alt={`Imagen ${index + 1}`}
-                                className="w-17 h-17 max-h-17" // Ajusta el tamaño máximo de la altura para la miniatura
+                                className="w-full h-auto max-w-full max-h-full object-contain"
                                 loading="lazy"
                             />
                         ) : (
@@ -87,7 +87,6 @@ export default function Instagram() {
                         </div>
                     </div>
                 ))}
-
             </div>
             {selectedMedia && (
                 <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-75 z-50" onClick={handleClose}>
@@ -105,3 +104,4 @@ export default function Instagram() {
         </Container>
     );
 }
+
