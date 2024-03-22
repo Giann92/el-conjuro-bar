@@ -3,7 +3,8 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <div className="hero">
+  <section id='inicio'>
+      <div className="hero">
       <img src='/img/fondo2-elconjuro.jpg' className="hero-image" />
       <div className="hero-content" style={{ boxShadow: '0 0 0 9px #7FDDCF,  0 0 0 13px black,0 0 0 19px #7FDDCF' }}>
       <h1 className="hero-title text-5xl font-bold">Bienvenidos <br /> a</h1>
@@ -51,6 +52,7 @@ const Hero: React.FC = () => {
           }
         `}</style>
     </div>
+  </section>
   );
 };
 

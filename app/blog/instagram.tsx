@@ -18,7 +18,7 @@ export default function Instagram() {
 
     useEffect(() => {
         const fetchMediaData = async () => {
-            const accessToken = 'IGQWRNd3dFempnSUVzNWtIU2s4T3Nnbnhfa2NoNEtrb3J0Qk01a3lJYURocUdmSjMxNGpYSTVHM1ZAwZAHU0U2pZAWEVHcXc3bFVmR3AtQTJHUnZAuYzRTakctanh0VXl6cjFPNTZAmbVNRY2ZACZAy1GREFYcXN1MWhMQTgZD'
+            const accessToken = 'IGQWRNV2pxcXJFUHVWRU96eVVkdDNpQWFmeWM0Q1pIX1pjdnUzb3pFT0Y4SUJkNlNROVZAQNHg5U3p0YUIzTFEwWnZAkUHNSSlNYblE2M055dzh5V1pVUmtvS3A1VVY0N2pNVjQxdlliZADJQMVk2UkpQNFBvR0s0OVUZD'
             const apiUrl = `https://graph.instagram.com/me/media?fields=id,media_url,media_type,thumbnail_url&access_token=${accessToken}`;
 
             try {
