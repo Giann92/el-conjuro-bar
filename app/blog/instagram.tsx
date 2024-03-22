@@ -1,19 +1,16 @@
 'use client'
-
 import Container from "@/components/shared/container";
 import Title from "@/components/ui/title";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-
+require('dotenv').config();
 
 interface InstagramMedia {
     id: string;
     media_url: string;
     media_type: string;
-    username: string;
-    caption: string;
-    thumbnail_url?: string;
+    thumbnail_url?: string; // Thumbnail URL
+    // Agrega otras propiedades si las necesitas
 }
 
 export default function Instagram() {
@@ -22,7 +19,7 @@ export default function Instagram() {
     useEffect(() => {
         const fetchMediaData = async () => {
             const accessToken = 'IGQWRNd3dFempnSUVzNWtIU2s4T3Nnbnhfa2NoNEtrb3J0Qk01a3lJYURocUdmSjMxNGpYSTVHM1ZAwZAHU0U2pZAWEVHcXc3bFVmR3AtQTJHUnZAuYzRTakctanh0VXl6cjFPNTZAmbVNRY2ZACZAy1GREFYcXN1MWhMQTgZD'
-            const apiUrl = `https://graph.instagram.com/me/media?fields=id,media_url,media_type,username,caption,thumbnail_url&access_token=${accessToken}`;
+            const apiUrl = `https://graph.instagram.com/me/media?fields=id,media_url,media_type,thumbnail_url&access_token=${accessToken}`;
 
             try {
                 const response = await axios.get(apiUrl);
@@ -37,9 +34,7 @@ export default function Instagram() {
                     id: item.id,
                     media_url: item.media_url,
                     media_type: item.media_type,
-                    username: item.username,
-                    caption: item.caption,
-                    thumbnail_url: item.thumbnail_url,
+                    thumbnail_url: item.thumbnail_url, // Agregar thumbnail_url si está presente
                 }));
 
                 console.log("Datos de las imágenes y reels:", media);
@@ -56,31 +51,25 @@ export default function Instagram() {
         return <div>No hay miniaturas disponibles.</div>;
     }
 
+    // Limitar la cantidad de elementos a mostrar (zlos primeros 10)
     const limitedMediaData = mediaData.slice(0, 10);
 
     return (
         <Container>
-            <Title title="Instagram" className="text-white mb-4" />
-            <div className="flex flex-wrap justify-center gap-4">
-                {limitedMediaData.map((media: InstagramMedia, index: number) => (
-                    <div key={media.id} className="relative">
-                        <div className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 relative overflow-hidden bg-white border border-gray-200">
-                            <div className="absolute inset-x-0 top-0 h-1 bg-gray-200"></div>
-                            {media.media_type === 'IMAGE' ? (
-                                <img src={media.media_url} alt={`Imagen ${index + 1}`} className="absolute inset-0 object-cover w-full h-full" />
-                            ) : (
-                                <video src={media.media_url} controls className="absolute inset-0 object-cover w-full h-full" />
-                            )}
-                            <div className="absolute inset-y-0 right-0 w-1 bg-gray-200"></div>
-                        </div>
-                        <div className="absolute bottom-0 left-0 w-full bg-white p-2">
-                            <p className="text-xs font-bold">{media.username}</p>
-                        </div>
-                    </div>
-                ))}
-            </div>
-        </Container>
+        <Title title="Instagram" className="text-white" />
+        <div className="flex flex-wrap justify-center gap-4">
+            {limitedMediaData.map((media: InstagramMedia, index: number) => (
+                <div key={media.id} className="w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 relative overflow-hidden">
+                    {media.media_type === 'IMAGE' ? (
+                        <img src={media.media_url} alt={`Imagen ${index + 1}`} className="absolute inset-0 object-cover w-full h-full" />
+                    ) : (
+                        <video src={media.media_url} controls className="absolute inset-0 object-cover w-full h-full" />
+                    )}
+                </div>
+            ))}
+        </div>
+    </Container>
+
     );
 }
-
 
