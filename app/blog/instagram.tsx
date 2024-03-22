@@ -89,13 +89,13 @@ export default function Instagram() {
                 ))}
             </div>
             {selectedMedia && (
-                <div className="fixed top-0 left-0 w-full h-13 flex justify-center items-center bg-black bg-opacity-75 z-50" onClick={handleClose}>
-                    <div className="relative">
-                        <div className="max-w-screen-sm max-h-screen-sm overflow-hidden bg-white rounded-lg shadow-lg p-4" onClick={(e) => e.stopPropagation()}>
+                <div className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-75 z-50" onClick={handleClose}>
+                    <div className="relative" onClick={(e) => e.stopPropagation()}>
+                        <div className="max-w-screen-sm max-h-screen-sm overflow-hidden bg-white rounded-lg shadow-lg p-4">
                             {selectedMedia.media_type === 'IMAGE' ? (
-                                <img src={selectedMedia.media_url} alt="Imagen ampliada" className="w-full max-w-15 max-h-15 object-contain" />
+                                <img src={selectedMedia.media_url} alt="Imagen ampliada" className="w-full h-auto max-w-full max-h-full object-contain" />
                             ) : (
-                                <video src={selectedMedia.media_url} className="w-full max-w-full max-h-39 object-contain" controls preload="auto" />
+                                <video src={selectedMedia.media_url} className="w-full h-auto max-w-full max-h-full object-contain" controls preload="auto" />
                             )}
                         </div>
                     </div>
@@ -104,5 +104,3 @@ export default function Instagram() {
         </Container>
     );
 }
-
-
