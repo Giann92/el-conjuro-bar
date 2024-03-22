@@ -10,8 +10,7 @@ interface InstagramMedia {
     media_url: string;
     media_type: string;
     thumbnail_url?: string;
-    username: string; // Thumbnail URL
-    // Agrega otras propiedades si las necesitas
+    username: string;
 }
 
 export default function Instagram() {
@@ -53,7 +52,6 @@ export default function Instagram() {
         return <div>No hay miniaturas disponibles.</div>;
     }
 
-    // Limitar la cantidad de elementos a mostrar (zlos primeros 10)
     const limitedMediaData = mediaData.slice(0, 10);
 
     return (
@@ -62,12 +60,21 @@ export default function Instagram() {
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 {limitedMediaData.map((media: InstagramMedia, index: number) => (
                     <div key={media.id} className="relative w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 overflow-hidden bg-white border border-gray-200">
-                        <img
-                            src={media.thumbnail_url || media.media_url}
-                            alt={`Imagen ${index + 1}`}
-                            className="absolute inset-0 object-cover w-full h-full"
-                            loading="lazy" // Añadimos el atributo loading="lazy" para cargar las imágenes de forma diferida
-                        />
+                        {media.media_type === 'IMAGE' ? ( // Verificamos si es una imagen
+                            <img
+                                src={media.thumbnail_url || media.media_url}
+                                alt={`Imagen ${index + 1}`}
+                                className="absolute inset-0 object-cover w-full h-full"
+                                loading="lazy"
+                            />
+                        ) : (
+                            <video // Si es un reel (video), mostramos el video
+                                src={media.media_url}
+                                className="absolute inset-0 object-cover w-full h-full"
+                                controls // Añadimos controles para reproducir el video
+                                preload="none" // No precargamos el video automáticamente
+                            />
+                        )}
                         <div className="absolute bottom-0 left-0 w-full bg-white p-2">
                             <p className="text-xs font-bold">{media.username}</p>
                         </div>
@@ -75,7 +82,5 @@ export default function Instagram() {
                 ))}
             </div>
         </Container>
-
     );
 }
-
