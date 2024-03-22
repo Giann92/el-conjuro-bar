@@ -15,6 +15,7 @@ interface InstagramMedia {
 
 export default function Instagram() {
     const [mediaData, setMediaData] = useState<InstagramMedia[]>([]);
+    const [selectedMedia, setSelectedMedia] = useState<InstagramMedia | null>(null);
 
     useEffect(() => {
         const fetchMediaData = async () => {
@@ -52,35 +53,56 @@ export default function Instagram() {
         return <div>No hay miniaturas disponibles.</div>;
     }
 
-    const limitedMediaData = mediaData.slice(0, 10);
+    const handleClick = (media: InstagramMedia) => {
+        setSelectedMedia(media);
+    };
+
+    const handleClose = () => {
+        setSelectedMedia(null);
+    };
 
     return (
         <Container>
-        <Title title="Instagram" className="text-white mb-4" />
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-            {limitedMediaData.map((media: InstagramMedia, index: number) => (
-                <div key={media.id} className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 overflow-hidden bg-white border border-gray-200 sm:w-1/2">
-                    {media.media_type === 'IMAGE' ? ( // Verificamos si es una imagen
-                        <img
-                            src={media.thumbnail_url || media.media_url}
-                            alt={`Imagen ${index + 1}`}
-                            className="absolute inset-0 object-cover w-full h-full"
-                            loading="lazy"
-                        />
-                    ) : (
-                        <video // Si es un reel (video), mostramos el video
-                            src={media.media_url}
-                            className="absolute inset-0 object-cover w-full h-full"
-                            controls // Añadimos controles para reproducir el video
-                            preload="none" // No precargamos el video automáticamente
-                        />
-                    )}
-                    <div className="absolute bottom-0 left-0 w-full bg-white p-2">
-                        <p className="text-xs font-bold">{media.username}</p>
+            <Title title="Instagram" className="text-white mb-4" />
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
+                {mediaData.map((media: InstagramMedia, index: number) => (
+                    <div key={media.id} className="relative w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5 mb-4 cursor-pointer" onClick={() => handleClick(media)}>
+                        {media.media_type === 'IMAGE' ? (
+                            <img
+                                src={media.thumbnail_url || media.media_url}
+                                alt={`Imagen ${index + 1}`}
+                                className="w-full h-auto"
+                                loading="lazy"
+                            />
+                        ) : (
+                            <video
+                                src={media.media_url}
+                                className="w-full h-auto"
+                                controls
+                                preload="none"
+                            />
+                        )}
+                        <div className="absolute bottom-0 left-0 w-full bg-white p-2">
+                            <p className="text-xs font-bold">{media.username}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            {selectedMedia && (
+                <div className="fixed top-0 left-0 w-full h-13 flex justify-center items-center bg-black bg-opacity-75 z-50" onClick={handleClose}>
+                    <div className="relative">
+                        <div className="max-w-screen-sm max-h-screen-sm overflow-hidden bg-white rounded-lg shadow-lg p-4" onClick={(e) => e.stopPropagation()}>
+                            {selectedMedia.media_type === 'IMAGE' ? (
+                                <img src={selectedMedia.media_url} alt="Imagen ampliada" className="w-full max-w-15 max-h-15 object-contain" />
+                            ) : (
+                                <video src={selectedMedia.media_url} className="w-full max-w-full max-h-39 object-contain" controls preload="auto" />
+                            )}
+                        </div>
                     </div>
                 </div>
-            ))}
-        </div>
-    </Container>
+            )}
+        </Container>
     );
 }
+
+
