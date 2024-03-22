@@ -66,7 +66,7 @@ export default function Instagram() {
             <Title title="Instagram" className="text-white mb-4" />
             <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
                 {mediaData.map((media: InstagramMedia, index: number) => (
-                    <div key={media.id} className="relative w-24 md:w-32 h-24 md:h-32 overflow-hidden bg-white border border-gray-200 cursor-pointer" onClick={() => handleClick(media)}>
+                    <div key={media.id} className="relative w-44 md:w-42 h-44 md:h-42 overflow-hidden bg-white border border-gray-200 cursor-pointer" onClick={() => handleClick(media)}>
                         {media.media_type === 'IMAGE' ? (
                             <img
                                 src={media.thumbnail_url || media.media_url}
