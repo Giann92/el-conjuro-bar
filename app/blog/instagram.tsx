@@ -56,31 +56,31 @@ export default function Instagram() {
 
     return (
         <Container>
-            <Title title="Instagram" className="text-white" />
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-                {limitedMediaData.map((media: InstagramMedia, index: number) => (
-                    <div key={media.id} className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 overflow-hidden bg-white border border-gray-200">
-                        {media.media_type === 'IMAGE' ? ( // Verificamos si es una imagen
-                            <img
-                                src={media.thumbnail_url || media.media_url}
-                                alt={`Imagen ${index + 1}`}
-                                className="absolute inset-0 object-cover w-full h-full"
-                                loading="lazy"
-                            />
-                        ) : (
-                            <video // Si es un reel (video), mostramos el video
-                                src={media.media_url}
-                                className="absolute inset-0 object-cover w-full h-full"
-                                controls // Añadimos controles para reproducir el video
-                                preload="none" // No precargamos el video automáticamente
-                            />
-                        )}
-                        <div className="absolute bottom-0 left-0 w-full bg-white p-2">
-                            <p className="text-xs font-bold">{media.username}</p>
-                        </div>
+        <Title title="Instagram" className="text-white mb-4" />
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+            {limitedMediaData.map((media: InstagramMedia, index: number) => (
+                <div key={media.id} className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 overflow-hidden bg-white border border-gray-200 sm:w-1/2">
+                    {media.media_type === 'IMAGE' ? ( // Verificamos si es una imagen
+                        <img
+                            src={media.thumbnail_url || media.media_url}
+                            alt={`Imagen ${index + 1}`}
+                            className="absolute inset-0 object-cover w-full h-full"
+                            loading="lazy"
+                        />
+                    ) : (
+                        <video // Si es un reel (video), mostramos el video
+                            src={media.media_url}
+                            className="absolute inset-0 object-cover w-full h-full"
+                            controls // Añadimos controles para reproducir el video
+                            preload="none" // No precargamos el video automáticamente
+                        />
+                    )}
+                    <div className="absolute bottom-0 left-0 w-full bg-white p-2">
+                        <p className="text-xs font-bold">{media.username}</p>
                     </div>
-                ))}
-            </div>
-        </Container>
+                </div>
+            ))}
+        </div>
+    </Container>
     );
 }
