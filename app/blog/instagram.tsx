@@ -18,7 +18,7 @@ export default function Instagram() {
 
     useEffect(() => {
         const fetchMediaData = async () => {
-            const accessToken = 'IGQWRNV2pxcXJFUHVWRU96eVVkdDNpQWFmeWM0Q1pIX1pjdnUzb3pFT0Y4SUJkNlNROVZAQNHg5U3p0YUIzTFEwWnZAkUHNSSlNYblE2M055dzh5V1pVUmtvS3A1VVY0N2pNVjQxdlliZADJQMVk2UkpQNFBvR0s0OVUZD'
+            const accessToken = 'IGQWRNV2pxcXJFUHVWRU96eVVkdDNpQWFmeWM0Q1pIX1pjdnUzb3pFT0Y4SUJkNlNROVZAQNHg5U3p0YUIzTFEwWnZAkUHNSSlNYblE2M055dzh5V1pVUmtvS3A1VVY0N2pNVjQxdlliZADJQMVk2UkpQNFBvR0s0OVUZD';
             const apiUrl = `https://graph.instagram.com/me/media?fields=id,media_url,media_type,thumbnail_url,username&access_token=${accessToken}`;
 
             try {
@@ -59,7 +59,7 @@ export default function Instagram() {
             <Title title="Instagram" className="text-white" />
             <div className="flex flex-wrap justify-center gap-4 mb-8">
                 {limitedMediaData.map((media: InstagramMedia, index: number) => (
-                    <div key={media.id} className="relative w-40 h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 xl:w-64 xl:h-64 overflow-hidden bg-white border border-gray-200">
+                    <div key={media.id} className="relative w-48 h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 overflow-hidden bg-white border border-gray-200">
                         {media.media_type === 'IMAGE' ? ( // Verificamos si es una imagen
                             <img
                                 src={media.thumbnail_url || media.media_url}
