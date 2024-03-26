@@ -18,6 +18,7 @@ const WhatsappLink: React.FC<WhatsappLinkProps> = ({ phoneNumber, className, sty
         target="_blank"
         rel="noopener noreferrer"
         className={`flex items-center justify-center bg-green-500 text-white rounded-full w-12 h-12 shadow-md ${className}`}
+        style={{ fontSize: '39px' }}
       >
         <FaWhatsapp />
       </Link>

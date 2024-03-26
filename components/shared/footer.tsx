@@ -22,17 +22,17 @@ const Footer: React.FC = () => {
           </div>
         </div>
         {/* Contenido de Medio de pago */}
-        <div className="flex justify-center">
-          <h2 className="mb-2">MEDIO DE PAGO: </h2>
+        <div className="mb-4 md:mb-0">
+          <h2 className="mb-3">MEDIO DE PAGO: </h2>
           <div className="flex justify-center">
-            <div className="mb-2 mr-4">
-              <img src="/img/mpvm.png" alt="Mercado Pago" className="w-48 md:w-30 h-auto" />
+            <div className="mb-3 mr-5">
+              <img src="/img/mpvm.png" alt="Mercado Pago" className="w-20 md:w-24 h-auto" />
             </div>
             <div className="mb-2 mr-4">
-              <img src="/img/transferencia_bancaria.png" alt="Transferencia bancaria" className="w-20 md:w-24 h-auto" />
+              <img src="/img/transferencia_bancaria.png" alt="Transferencia bancaria" className="w-14 md:w-18 h-auto" />
             </div>
             <div className="mb-2">
-              <img src="/img/efectivo.png" alt="Efectivo" className="w-20 md:w-24 h-auto" />
+              <img src="/img/efectivo.png" alt="Efectivo" className="w-14 md:w-18 h-auto" />
             </div>
           </div>
         </div>
