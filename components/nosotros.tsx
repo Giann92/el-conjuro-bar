@@ -3,10 +3,10 @@ import Title from "./ui/title";
 
 const Nosotros = () => {
     return (
-        <section id="nosotros" className="min-h-screen flex items-center justify-center bg-gray-800 bg-opacity-50 text-white">
+        <section id="nosotros" className="min-h-20px flex items-center justify-center bg-gray-800 bg-opacity-50 text-white mb-7">
             <Container>
-                <Title title="Nosotros" className=" text-white mb-4" />
-                <p className="text-lg leading-relaxed font-medium">
+                <Title title="Nosotros" className=" text-white mb-4" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)' }}/>
+                <p className="text-lg leading-relaxed font-medium mb-9">
 
                     ¡Bienvenidos a nuestro Resto Bar, donde los sabores se mezclan con la diversión y los recuerdos se crean para durar toda la vida! Aquí,
                     cada plato está impregnado de pasión y cada bebida está hecha para deleitar tus sentidos.
@@ -17,7 +17,7 @@ const Nosotros = () => {
                     ¡Salud y felicidad para todos! 🎉🍹🎤
                 </p>
             </Container>
-        </section>
+        </section >
     );
 }
 

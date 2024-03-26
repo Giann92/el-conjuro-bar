@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         {/* Texto de derechos de autor */}
-        <p>Derechos de autor © 2024 El Conjuro Bar. Todos los derechos reservados.</p>
+        <p> © 2024 El Conjuro Bar. Todos los derechos reservados.</p>
       </Container>
     </footer>
   );
