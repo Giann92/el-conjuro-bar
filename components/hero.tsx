@@ -7,10 +7,10 @@ const Hero: React.FC = () => {
       <div className="hero">
         <img src='/img/fondo2-elconjuro.jpg' className="hero-image" />
         <div className="hero-content" style={{ boxShadow: '0 0 0 9px #7FDDCF,  0 0 0 13px black,0 0 0 19px #7FDDCF' }}>
-          <h1 className="hero-title text-5xl font-bold">Bienvenidos <br /> a</h1>
+          <h1 className="hero-title text-5xl font-bold">Bienvenidos <br/> a</h1>
           <h1 className="hero-title font-lilita text-7xl font-bold">El Conjuro Bar</h1>
           <p className="hero-description text-3xl font-bold">¡Disfruta de nuestras deliciosas comidas y bebidas!</p>
-          <p className='hero-red text-3xl font-bold'>Realizamos eventos empresariales y sociales para mas infomarcion contactenos</p>
+          <p className='hero-red text-2xl font-bold'>Realizamos eventos empresariales y sociales para mas infomarcion contactenos</p>
         </div>
         <style jsx>{`
           .hero {
