@@ -32,7 +32,7 @@ const MenuMobile: FC<MenuMobileProps> = ({ isOpen, onClose }) => {
       {/* Este div contiene el menú móvil */}
       <div
         className={cn(
-          "fixed left-0 right-0 w-full sn:w-[45%] h-auto z-50 bg-black transition-all duration-300 ease-in-out",
+          "fixed left-0 right-0 w-full sn:w-[45%] h-auto z-50 bg-black bg-opacity-60 transition-all duration-300 ease-in-out",
           !isOpen ? "top-0 -translate-y-full" : "top-[80px]"
         )}
       >
