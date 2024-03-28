@@ -23,8 +23,6 @@ export default async function GalleryPage() {
     .max_results(30)
     .execute()) as { resources: SearchResult[] };
 
-  console.log(results);
-
   return (
     <section>
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4 lg:gap-1">
