@@ -1,9 +1,9 @@
 'use client'
+require('dotenv').config();
 import Container from "@/components/shared/container";
 import Title from "@/components/ui/title";
 import axios from "axios";
 import { useEffect, useState } from "react";
-require('dotenv').config();
 
 interface InstagramMedia {
     id: string;
@@ -19,7 +19,7 @@ export default function Instagram() {
 
     useEffect(() => {
         const fetchMediaData = async () => {
-            const accessToken = 'IGQWRNV2pxcXJFUHVWRU96eVVkdDNpQWFmeWM0Q1pIX1pjdnUzb3pFT0Y4SUJkNlNROVZAQNHg5U3p0YUIzTFEwWnZAkUHNSSlNYblE2M055dzh5V1pVUmtvS3A1VVY0N2pNVjQxdlliZADJQMVk2UkpQNFBvR0s0OVUZD';
+            const accessToken ='IGQWRNV2pxcXJFUHVWRU96eVVkdDNpQWFmeWM0Q1pIX1pjdnUzb3pFT0Y4SUJkNlNROVZAQNHg5U3p0YUIzTFEwWnZAkUHNSSlNYblE2M055dzh5V1pVUmtvS3A1VVY0N2pNVjQxdlliZADJQMVk2UkpQNFBvR0s0OVUZD';
             const apiUrl = `https://graph.instagram.com/me/media?fields=id,media_url,media_type,thumbnail_url,username&access_token=${accessToken}`;
 
             try {

@@ -2,10 +2,11 @@
 import React from 'react';
 import { FaWhatsapp, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
 import Container from './shared/container';
+import Link from 'next/link';
 
 const Contacto: React.FC = () => {
-    const phoneNumber = '+5491124537882'; // Número de teléfono de WhatsApp
-    const address = 'Bartolome Mitre 838, CABA, Argentina'; // Dirección
+    const phoneNumber = '+5491153279907'; // Número de teléfono de WhatsApp
+    const address = 'El Conjuro Pizza Bar'; // Dirección
 
     return (
         <>
@@ -15,13 +16,19 @@ const Contacto: React.FC = () => {
                         {/* Número de WhatsApp */}
                         <div className="flex items-center mb-2">
                             <FaWhatsapp className="mr-2" />
-                            <span>{phoneNumber}</span>
+                            <Link
+                                href={{
+                                    pathname: `https://wa.me/${phoneNumber}`
+                                }}
+                            >
+                                {phoneNumber}
+                            </Link>
                         </div>
 
                         {/* Dirección */}
                         <div className="flex items-center mb-2">
                             <FaMapMarkerAlt className="text-gray-600 mr-2" />
-                            <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`} target="_blank" rel="noopener noreferrer">{address}</a>
+                            <a href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`} target="_blank" rel="noopener noreferrer">Bartolome Mitre 838, CABA, Argentina</a>
                         </div>
 
 

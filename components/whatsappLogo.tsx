@@ -5,7 +5,7 @@
     import Container from "./shared/container";
     
     const WhatsappLogo: React.FC = () => {
-        const phoneNumber = '+5491124537882';
+        const phoneNumber = '+5491153279907';
         
         return (
             <>

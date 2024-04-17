@@ -34,6 +34,12 @@ const Carta = () => {
                         </div>
                     ))}
                 </div>
+                <div className="inline-block">
+                    <p className="text-red-600 text-2xl mt-4 font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)', backgroundColor: 'black' }}>
+                        Se realiza delivery por la zona, solo se recibe pedidos por mensaje a través de WhatsApp,
+                        a demás puede consultar por nuestro menu del dia
+                    </p>
+                </div>
             </Container>
         </section>
     );
