@@ -6,7 +6,7 @@ import GalleryPage from "@/app/galeria/page";
 
 const Eventos: React.FC = () => {
   return (
-    <section id="fotos" className="min-h-screen flex items-center justify-center text-white">
+    <section id="fotos" className="min-h-screen flex items-center justify-center text-white mb-4">
       <Container>
         <Title title="Fotos" className="text-white mb-4" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2.1, 0.9)' }} />
         <GalleryPage />

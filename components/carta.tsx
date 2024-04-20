@@ -34,25 +34,30 @@ const Carta = () => {
                         </div>
                     ))}
                 </div>
-                <div className="inline-block">
-                    <p className="dark-green text-1.5xl mt-4 font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)', backgroundColor: 'black' }}>
-                        Contamos con variedades de Gin tonic: <br />
-                        Gin tonic de frutos rojos <br />
-                        Gin tonic con menta y pepino <br /> 
-                        Gin tonic con pomelo y menta<br />
-                    </p>
-                </div><br />
-                <div className="inline-block">
-                    <p className="dark-green text-1.5xl mt-4 font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)', backgroundColor: 'black' }}>
-                        PROMO: 2x1 en tragos (fernet, gintonic tradicional, gancia, Destornillador y campari)
-                    </p>
+                <div className='bg-gray-800 bg-opacity-80 mt-2 mb-2'>
+                    <div className="inline-block">
+                        <p className="dark-green text-1.5xl mt-4 font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)' }}>
+                            Contamos con variedades de Gin tonic: <br />
+                            Gin tonic de frutos rojos <br />
+                            Gin tonic con menta y pepino <br />
+                            Gin tonic con pomelo y menta<br />
+                        </p>
+                    </div><br />
+                    <div className="inline-block">
+                        <p className="dark-green text-1.5xl mt-4 mb-2 font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)' }}>
+                            PROMO: 2x1 en tragos (fernet, gintonic tradicional, gancia, Destornillador y campari)
+                        </p>
+                    </div>
                 </div>
-                <div className="inline-block">
-                    <p className="text-red-600 text-2xl mt-4 font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)', backgroundColor: 'black' }}>
-                        Se realiza delivery por la zona, solo se recibe pedidos por mensaje a través de WhatsApp,
-                        a demás puede consultar por nuestro menu del dia
-                    </p>
+                <div className="inline-block mb-5">
+                    <div style={{ border: '3px solid black', padding: '1px', borderRadius: '10px' }}>
+                        <p className="text-red-600 text-2xl font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)' }}>
+                            Se realiza delivery por la zona, solo se recibe pedidos por mensaje a través de WhatsApp,
+                            a demás pueden consultar por nuestro menu del dia
+                        </p>
+                    </div>
                 </div>
+
             </Container>
         </section>
     );

@@ -17,7 +17,6 @@ export default function Home() {
         <Nosotros />
         <Eventos />
         <Carta/>
-      <Instagram/>
       </main>
     </div>
   );
