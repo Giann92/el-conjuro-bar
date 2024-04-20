@@ -28,3 +28,10 @@ body {
 .font-lilita {
   font-family: 'Lilita', serif;
 }
+/* En tu archivo de estilos CSS personalizado, por ejemplo, styles.css */
+.green-aqua {
+  color: #7FFFD4; /* Código hexadecimal para el color verde agua */
+}
+.dark-green {
+  color: #08d698; /* Código hexadecimal para un tono de verde más oscuro */
+}
