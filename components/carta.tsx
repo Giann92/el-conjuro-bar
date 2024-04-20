@@ -34,7 +34,7 @@ const Carta = () => {
                         </div>
                     ))}
                 </div>
-                <div className='bg-gray-800 bg-opacity-80 mt-2 mb-2'>
+                <div className='bg-black  mt-2 mb-2'>
                     <div className="inline-block">
                         <p className="dark-green text-1.5xl mt-4 font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)' }}>
                             Contamos con variedades de Gin tonic: <br />
@@ -49,7 +49,7 @@ const Carta = () => {
                         </p>
                     </div>
                 </div>
-                <div className="inline-block mb-5">
+                <div className="inline-block mb-5 bg-gray-800 bg-opacity-50">
                     <div style={{ border: '3px solid black', padding: '1px', borderRadius: '10px' }}>
                         <p className="text-red-600 text-2xl font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)' }}>
                             Se realiza delivery por la zona, solo se recibe pedidos por mensaje a través de WhatsApp,
