@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
           <h1 className="hero-title text-5xl font-bold">Bienvenidos <br/> a</h1>
           <h1 className="hero-title font-lilita text-7xl font-bold">El Conjuro Bar</h1>
           <p className="hero-description text-3xl font-bold">¡Disfruta de nuestras deliciosas comidas y bebidas!</p>
-          <p className='hero-red text-2xl font-bold'>Realizamos eventos empresariales y sociales para mas infomarcion contactenos</p>
+          <p className='hero-white text-2xl font-bold'>Realizamos eventos empresariales y sociales para mas infomarción contactenos</p>
         </div>
         <style jsx>{`
           .hero {
@@ -50,10 +50,10 @@ const Hero: React.FC = () => {
             font-size: 1.5rem;
             text-shadow: 2px 2px 6px rgba(0, 0, 1, 2); /* Agregar sombra negra medio marcada */
           }
-          .hero-red{
+          .hero-white{
             font-size: 6em;
             text-shadow: 3px 3px 5px rgba(0, 0, 2, 1.9); /* Agregar sombra negra medio marcada */
-            color: red
+            color: white
           }
         `}</style>
       </div>

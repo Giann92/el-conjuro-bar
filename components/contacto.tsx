@@ -1,6 +1,6 @@
 'use client'
 import React from 'react';
-import { FaWhatsapp, FaMapMarkerAlt, FaInstagram } from 'react-icons/fa';
+import { FaWhatsapp, FaMapMarkerAlt, FaInstagram, FaTiktok } from 'react-icons/fa';
 import Container from './shared/container';
 import Link from 'next/link';
 
@@ -36,6 +36,12 @@ const Contacto: React.FC = () => {
                         <div className="flex items-center">
                             <FaInstagram className="text-gray-600 mr-2" />
                             <a href="https://www.instagram.com/elconjuro_pizzabar" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        </div>
+
+                        {/* Icono de Tiktok con enlace */}
+                        <div className="flex items-center mt-2">
+                            <FaTiktok className="text-gray-600 mr-2" />
+                            <a href="https://www.tiktok.com/@elconjuro_pizzaba?_t=8lOoOHnaJGA&_r=1" target="_blank" rel="noopener noreferrer">TikTok</a>
                         </div>
                     </div>
                 </section>

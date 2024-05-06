@@ -51,7 +51,7 @@ const Carta = () => {
                 </div>
                 <div className="inline-block mb-5 bg-gray-800 bg-opacity-50">
                     <div style={{ border: '3px solid black', padding: '1px', borderRadius: '10px' }}>
-                        <p className="text-red-600 text-2xl font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)' }}>
+                        <p className="text-white-600 text-2xl font-bold p-4 rounded-lg" style={{ textShadow: '3px 3px 5px rgba(0, 0, 2, 1.9)' }}>
                             Se realiza delivery por la zona, solo se recibe pedidos por mensaje a través de WhatsApp,
                             a demás pueden consultar por nuestro menu del dia
                         </p>
