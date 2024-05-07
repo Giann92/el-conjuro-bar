@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
           <h1 className="hero-title text-5xl font-bold">Bienvenidos <br/> a</h1>
           <h1 className="hero-title font-lilita text-7xl font-bold">El Conjuro Bar</h1>
           <p className="hero-description text-3xl font-bold">¡Disfruta de nuestras deliciosas comidas y bebidas!</p>
-          <p className='hero-white text-2xl font-bold'>Realizamos eventos empresariales y sociales para mas infomarción contactenos</p>
+          <p className='hero-white text-2xl font-bold'>Realizamos eventos empresariales y sociales para mas información contactenos</p>
         </div>
         <style jsx>{`
           .hero {
