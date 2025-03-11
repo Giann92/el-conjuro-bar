@@ -18,7 +18,7 @@ cloudinary.v2.config({
 // Componente GalleryPage
 export default async function GalleryPage() {
   const results = (await cloudinary.v2.search
-    .expression('resource_type:image')
+    .expression('resource_type:image AND folder: elConjuroBar')
     .sort_by('created_at', 'desc')
     .max_results(30)
     .execute()) as { resources: SearchResult[] };
